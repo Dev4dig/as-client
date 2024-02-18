@@ -1,49 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@700;800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Roboto:wght@900&display=swap");
+ 
+
 body {
   padding: 0px;
   margin: 0px;
 }
-body .hero {
-  width: 100%;
-  height: 1250px;
-  background: url("/images/hero.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: left;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 0 5.563rem;
-}
-body .hero .container {
+
+body .hero .containe {
   width: 100%;
   height: 100%;
   margin-top: 5px;
   display: flex;
   flex-direction: column;
 }
-body .hero .container .nav {
+body .hero .containe .nav {
   width: 100%;
   height: 80px;
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
 }
-body .hero .container .nav .logo img {
+body .hero .containe .nav .logo img {
   width: 15.25rem;
   height: 7.375rem;
 }
-body .hero .container .nav .menu {
+body .hero .containe .nav .menu {
   display: flex;
   align-items: center;
 }
-body .hero .container .nav .menu .menu-list {
+body .hero .containe .nav .menu .menu-list {
   list-style-type: none;
   display: flex;
   align-items: center;
   gap: 6.25rem;
 }
-body .hero .container .nav .menu .menu-list li a {
+body .hero .containe .nav .menu .menu-list li a {
   text-decoration: none;
   color: white;
   font-family: "Open Sans";
@@ -52,16 +41,16 @@ body .hero .container .nav .menu .menu-list li a {
   font-weight: 800;
   line-height: normal;
 }
-body .hero .container .nav .menu .menu-list .active {
+body .hero .containe .nav .menu .menu-list .active {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-body .hero .container .nav .menu .menu-list .active a {
+body .hero .containe .nav .menu .menu-list .active a {
   color: #CC0909;
 }
-body .hero .container .nav .menu .menu-list .active::after {
+body .hero .containe .nav .menu .menu-list .active::after {
   content: "";
   width: 8px;
   height: 8px;
@@ -69,93 +58,75 @@ body .hero .container .nav .menu .menu-list .active::after {
   border-radius: 50%;
   color: none;
 }
+
+
+
+
 body .hero .container .content {
-  flex-grow: 1;
+  /* flex-grow: 1;
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: end;
-  justify-content: center;
+  justify-content: center; */
 }
 body .hero .container .content .text {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: end; */
 }
 body .hero .container .content .text .social {
-  display: flex;
-  gap: 2rem;
+  /* display: flex;
+  gap: 2rem; */
 }
-body .hero .container .content .text .social .icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3px;
+body .hero .containe .content .text .social .icon {
+   @apply w-10 h-10 bg-[white] flex items-center justify-center p-[3px] rounded-[50%];
+
 }
-body .hero .container .content .text .social .icon img {
-  width: 40px;
+
+
+body .hero .containe .content .text .social .icon img {
+ @apply  w-10;
 }
-body .hero .container .content .text p {
-  color: #FFF;
-  text-align: right;
+body .hero .containe .content .text p {
   font-family: "Open Sans";
+  /* color: #FFF;
+  text-align: right;
   font-size: 2.5rem;
   font-style: normal;
   font-weight: 600;
-  line-height: normal;
+  line-height: normal; */
 }
-body .hero .container .content .text button {
-  padding: 1.125rem 2.813rem;
-  border: 2px solid #CC0909;
+body .hero .containe .content .text button {
+ @apply text-[#CC0909] text-right  not-italic font-semibold leading-[normal]  rounded-[50px] border-2 border-solid border-[#CC0909];
   background: transparent;
-  border-radius: 50px;
-  color: #CC0909;
-  text-align: right;
   font-family: "Open Sans";
-  font-size: 1.875rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
 }
-body .hero .container .content .view-more {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 12.938rem;
+
+
+body .hero .containe .content .view-more {
+  @apply w-full flex flex-col justify-center items-center pt-[12.938rem];
+
 }
-body .hero .container .content .view-more img {
-  width: 200px;
-  height: 50px;
+body .hero .containe .content .view-more img {
+   @apply w-[200px] h-[50px];
 }
-body .hero .container .content .view-more a {
-  color: #FFF;
-  text-align: center;
+body .hero .containe .content .view-more a {
+  @apply text-white text-center not-italic font-normal leading-[normal] no-underline;
   font-family: "Open Sans";
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-decoration: none;
 }
+
+
+.box{
+    @apply w-full bg-cover bg-no-repeat flex flex-col items-center box-border p-[2.563rem];
+
+}
+
 body .beauty {
-  width: 100%;
-  height: 77.5rem;
   background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.69) 100%), url("/images/beauty.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 2.563rem;
+  @apply box;
 }
-body .beauty .container {
+.container {
   width: 100%;
   box-sizing: border-box;
   border: 2px solid #CC0909;
@@ -163,139 +134,50 @@ body .beauty .container {
   display: flex;
   flex-direction: column;
 }
-body .beauty .container .content-col {
+.content-col {
   width: 500px;
   height: 100%;
 }
-body .beauty .container .content-col .side-border {
-  width: 100%;
-  border-left: 3px solid #CC0909;
-  box-sizing: border-box;
-  padding-left: 2.063rem;
-  margin-left: 2.875rem;
-  margin-top: 16.25rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+.container .content-col .side-border {
+ 
+  @apply  box-border w-full flex flex-col ml-[2.875rem] border-l-[3px] border-l-[#CC0909] border-solid;
   justify-content: start;
+
 }
-body .beauty .container .content-col .side-border .top-bar {
+.container .content-col .side-border .top-bar {
   height: 2px;
   width: 198px;
   background-color: #CC0909;
 }
-body .beauty .container .content-col .side-border h2 {
-  margin: 0px;
-  color: #FFF;
-  text-align: left;
+ .container .content-col .side-border h2 {
+   @apply text-white text-left  not-italic font-semibold leading-[normal] m-0;
   font-family: "Open Sans";
-  font-size: 72px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
 }
-body .beauty .container .content-col .side-border p {
-  color: #FFF;
+.container .content-col .side-border p {
+   @apply text-white not-italic font-light leading-[normal] m-0 ;
   font-family: "Open Sans";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  margin: 0px;
 }
+
+
+
+
+
 body .potrait {
-  width: 100%;
-  height: 77.5rem;
   background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.69) 100%), url("/images/potrait.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 2.563rem;
+   @apply box;
 }
-body .potrait .container {
-  width: 100%;
-  box-sizing: border-box;
-  border: 2px solid #CC0909;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: end;
-}
-body .potrait .container .content-col {
-  width: 500px;
-  height: 100%;
-}
-body .potrait .container .content-col .side-border {
-  width: 100%;
-  border-right: 3px solid #CC0909;
-  box-sizing: border-box;
-  padding-right: 2.063rem;
-  margin-right: 2.875rem;
-  margin-top: 23.75rem;
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: end;
-  box-sizing: border-box;
-}
-body .potrait .container .content-col .side-border .top-bar {
-  height: 2px;
-  width: 198px;
-  background-color: #CC0909;
-}
-body .potrait .container .content-col .side-border h2 {
-  margin: 0px;
-  color: #FFF;
-  text-align: left;
-  font-family: "Open Sans";
-  font-size: 72px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-body .potrait .container .content-col .side-border p {
-  width: 100%;
-  color: #FFF;
-  font-family: "Open Sans";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  text-align: right;
-  margin: 0px;
-}
+
+
+
+
+
 body .fashion {
-  width: 100%;
-  height: 77.5rem;
   background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url("/images/fashion.png");
-  background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 2.563rem;
+  @apply box;
 }
-body .fashion .container {
-  width: 100%;
-  box-sizing: border-box;
-  border: 2px solid #CC0909;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-body .fashion .container .content-col {
-  width: 500px;
-  height: 100%;
-}
+
 body .fashion .container .content-col .side-border {
-  width: 100%;
+  /* width: 100%;
   border-left: 3px solid #CC0909;
   box-sizing: border-box;
   padding-left: 2.063rem;
@@ -304,44 +186,11 @@ body .fashion .container .content-col .side-border {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-}
-body .fashion .container .content-col .side-border .top-bar {
-  height: 2px;
-  width: 198px;
-  background-color: #CC0909;
-}
-body .fashion .container .content-col .side-border h2 {
-  margin: 0px;
-  color: #FFF;
-  text-align: left;
-  font-family: "Open Sans";
-  font-size: 72px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-body .fashion .container .content-col .side-border p {
-  color: #FFF;
-  font-family: "Open Sans";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  margin: 0px;
+  justify-content: start; */
 }
 body .meeting {
-  width: 100%;
-  height: 77.5rem;
   background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url("/images/meeting.png");
-  background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 2.563rem;
+   @apply box;
 }
 body .meeting .container {
   width: 100%;
@@ -357,7 +206,7 @@ body .meeting .container .content-col {
   width: 500px;
   height: 100%;
 }
-body .meeting .container .content-col .side-border {
+/* body .meeting .container .content-col .side-border {
   width: 100%;
   border-right: 3px solid #CC0909;
   box-sizing: border-box;
@@ -370,45 +219,10 @@ body .meeting .container .content-col .side-border {
   justify-content: end;
   align-items: end;
   box-sizing: border-box;
-}
-body .meeting .container .content-col .side-border .top-bar {
-  height: 2px;
-  width: 198px;
-  background-color: #CC0909;
-}
-body .meeting .container .content-col .side-border h2 {
-  margin: 0px;
-  color: #FFF;
-  text-align: left;
-  font-family: "Open Sans";
-  font-size: 72px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-body .meeting .container .content-col .side-border p {
-  width: 100%;
-  color: #FFF;
-  font-family: "Open Sans";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  text-align: right;
-  margin: 0px;
-}
+} */
 body .people {
-  width: 100%;
-  height: 77.5rem;
   background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url("/images/people.png");
-  background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 2.563rem;
+   @apply box;
 }
 body .people .container {
   width: 100%;
@@ -422,7 +236,7 @@ body .people .container .content-col {
   width: 500px;
   height: 100%;
 }
-body .people .container .content-col .side-border {
+/* body .people .container .content-col .side-border {
   width: 100%;
   border-left: 3px solid #CC0909;
   box-sizing: border-box;
@@ -433,45 +247,14 @@ body .people .container .content-col .side-border {
   display: flex;
   flex-direction: column;
   justify-content: start;
-}
-body .people .container .content-col .side-border .top-bar {
-  height: 2px;
-  width: 198px;
-  background-color: #CC0909;
-}
-body .people .container .content-col .side-border h2 {
-  margin: 0px;
-  color: #FFF;
-  text-align: left;
-  font-family: "Open Sans";
-  font-size: 72px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-body .people .container .content-col .side-border p {
-  color: #FFF;
-  font-family: "Open Sans";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  margin: 0px;
-}
+} */
+
+
 body .product {
-  width: 100%;
-  height: 77.5rem;
   background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%), url("/images/product.png");
-  background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 2.563rem;
+  @apply box;
 }
-body .product .container {
+/* body .product .container {
   width: 100%;
   box-sizing: border-box;
   border: 2px solid #CC0909;
@@ -480,63 +263,11 @@ body .product .container {
   flex-direction: column;
   justify-content: end;
   align-items: end;
-}
-body .product .container .content-col {
-  width: 500px;
-  height: 100%;
-}
-body .product .container .content-col .side-border {
-  width: 100%;
-  border-right: 3px solid #CC0909;
-  box-sizing: border-box;
-  padding-right: 2.063rem;
-  margin-right: 2.875rem;
-  margin-top: 8.125rem;
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: end;
-  box-sizing: border-box;
-}
-body .product .container .content-col .side-border .top-bar {
-  height: 2px;
-  width: 198px;
-  background-color: #CC0909;
-}
-body .product .container .content-col .side-border h2 {
-  margin: 0px;
-  color: #FFF;
-  text-align: left;
-  font-family: "Open Sans";
-  font-size: 72px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-body .product .container .content-col .side-border p {
-  width: 100%;
-  color: #FFF;
-  font-family: "Open Sans";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  text-align: right;
-  margin: 0px;
-}
+} */
+
 body .couple {
-  width: 100%;
-  height: 77.5rem;
   background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), url("/images/couple.png");
-  background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 2.563rem;
+   @apply box;
 }
 body .couple .container {
   width: 100%;
@@ -550,7 +281,7 @@ body .couple .container .content-col {
   width: 500px;
   height: 100%;
 }
-body .couple .container .content-col .side-border {
+/* body .couple .container .content-col .side-border {
   width: 100%;
   border-left: 3px solid #CC0909;
   box-sizing: border-box;
@@ -561,59 +292,20 @@ body .couple .container .content-col .side-border {
   display: flex;
   flex-direction: column;
   justify-content: start;
-}
-body .couple .container .content-col .side-border .top-bar {
-  height: 2px;
-  width: 198px;
-  background-color: #CC0909;
-}
-body .couple .container .content-col .side-border h2 {
-  margin: 0px;
-  color: #FFF;
-  text-align: left;
-  font-family: "Open Sans";
-  font-size: 72px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-body .couple .container .content-col .side-border p {
-  color: #FFF;
-  font-family: "Open Sans";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  margin: 0px;
-}
+} */
+
+
+
+
+
+
 body .nature {
-  width: 100%;
-  height: 77.5rem;
+  
   background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.89) 100%), url("/images/nature.png");
-  background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 2.563rem;
+@apply box;
 }
-body .nature .container {
-  width: 100%;
-  box-sizing: border-box;
-  border: 2px solid #CC0909;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: end;
-}
-body .nature .container .content-col {
-  width: 500px;
-  height: 100%;
-}
-body .nature .container .content-col .side-border {
+
+/* body .nature .container .content-col .side-border {
   width: 100%;
   border-right: 3px solid #CC0909;
   box-sizing: border-box;
@@ -626,58 +318,12 @@ body .nature .container .content-col .side-border {
   justify-content: end;
   align-items: end;
   box-sizing: border-box;
-}
-body .nature .container .content-col .side-border .top-bar {
-  height: 2px;
-  width: 198px;
-  background-color: #CC0909;
-}
-body .nature .container .content-col .side-border h2 {
-  margin: 0px;
-  color: #FFF;
-  text-align: left;
-  font-family: "Open Sans";
-  font-size: 72px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-body .nature .container .content-col .side-border p {
-  width: 100%;
-  color: #FFF;
-  font-family: "Open Sans";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  text-align: right;
-  margin: 0px;
-}
+} */
 body .birthdays {
-  width: 100%;
-  height: 77.5rem;
   background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.89) 100%), url("/images/birthdays.png");
-  background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2.563rem;
-  box-sizing: border-box;
-  position: relative;
+   @apply box;
 }
-body .birthdays .container {
-  width: 100%;
-  border: 2px solid #CC0909;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-body .birthdays .container .content-col {
-  width: 500px;
-  height: 100%;
-}
+/* 
 body .birthdays .container .content-col .side-border {
   width: 100%;
   border-left: 3px solid #CC0909;
@@ -689,31 +335,12 @@ body .birthdays .container .content-col .side-border {
   display: flex;
   flex-direction: column;
   justify-content: start;
-}
-body .birthdays .container .content-col .side-border .top-bar {
-  height: 2px;
-  width: 198px;
-  background-color: #CC0909;
-}
-body .birthdays .container .content-col .side-border h2 {
-  margin: 0px;
-  color: #FFF;
-  text-align: left;
-  font-family: "Open Sans";
-  font-size: 72px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-body .birthdays .container .content-col .side-border p {
-  color: #FFF;
-  font-family: "Open Sans";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  margin: 0px;
-}
+} */
+
+
+
+
+
 body .footer {
   min-height: 532px;
   width: 100%;

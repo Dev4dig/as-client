@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@700;800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Roboto:wght@900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-link {
+    @apply text-white font-normal text-[1rem];
+
+
+}
+
+.active {
+
+
+    @apply font-sans flex flex-col justify-center items-center;
+
+    a {
+        @apply text-acccent;
+    }
+
+    &::after {
+        content         : "";
+        width           : 8px;
+        height          : 8px;
+        background-color: #CC0909;
+        border-radius   : 50%;
+        color           : none;
+
+    }
+
+}
+
+.left-col {
+
+
+    .text {
+        // transform             : rotate(-90deg);
+        // transform-origin      : right center;
+        // transform          : rotate(-90deg) translateY(-87%);
+        // transform       : rotate(-90deg) translateX(-50%);
+
+        h2.fancy {
+            font-family               : "Qwitcher Grypen";
+            // transform              : rotate(-90deg);
+            font-size                 : 191.19px;
+            line-height               : 119px;
+            text-align                : center;
+
+            writing-mode    : vertical-lr;
+            /* Vertical layout from left to right */
+            text-orientation: upright;
+            /* Keep text upright */
+            white-space     : nowrap;
+            /* Prevent text from breaking to a new line */
+            width           : min-content;
+        }
+
+        h2.plain {
+            font-family         : "Open Sans";
+            // transform        : rotate(-90deg);
+            writing-mode        : vertical-lr;
+            /* Vertical layout from left to right */
+            text-orientation    : upright;
+            /* Keep text upright */
+            white-space         : nowrap;
+            /* Prevent text from breaking to a new line */
+            width               : min-content;
+
+        }
+    }
+
+
+}
