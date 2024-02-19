@@ -55,10 +55,10 @@ const MobileNav = () => {
                 <div className="links w-full bg-black z-10  p-[2rem]">
                     <ul className="menu-list z-20 ">
                         <li className="link active">
-                            <a href="">Home</a>
+                            <a href="/">Home</a>
                         </li>
                         <li className="link">
-                            <a href="">Book</a>
+                            <a href="/booking">Book</a>
                         </li>
                         <li className="link">
                             <a href="">Contact</a>

@@ -15,10 +15,10 @@ const HomeContent = () => {
                         <div className="menu">
                             <ul className="menu-list hidden md:flex">
                                 <li className="link active">
-                                    <a href="">Home</a>
+                                    <a href="/">Home</a>
                                 </li>
                                 <li className="link">
-                                    <a href="">Book</a>
+                                    <a href="/booking">Book</a>
                                 </li>
                                 <li className="link">
                                     <a href="">Contact</a>
