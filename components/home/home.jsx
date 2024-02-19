@@ -6,36 +6,36 @@ const HomeContent = () => {
         <>
             {/* <!-- hero --> */}
             <MobileNav />
-            <div class="hero bg-[url('/images/hero.png')] w-full h-[650px] lg:h-[1250px] bg-cover lg:bg-cover bg-no-repeat bg-left flex flex-col items-center box-border px-[1.563rem] py-0">
-                <div class="containe px-[1rem] md:px-[6rem]">
-                    <div class="nav hidden lg:flex ">
-                        <div class="logo">
+            <div className="hero bg-[url('/images/hero.webp')] w-full h-[650px] lg:h-[1250px] bg-cover lg:bg-cover bg-no-repeat bg-top lg:bg-left flex flex-col items-center box-border px-[1.563rem] py-0">
+                <div className="containe px-[1rem] md:px-[6rem]">
+                    <div className="nav hidden lg:flex ">
+                        <div className="logo">
                             <img src="/images/logo2.png" alt="" />
                         </div>
-                        <div class="menu">
-                            <ul class="menu-list hidden md:flex">
-                                <li class="link active">
+                        <div className="menu">
+                            <ul className="menu-list hidden md:flex">
+                                <li className="link active">
                                     <a href="">Home</a>
                                 </li>
-                                <li class="link">
+                                <li className="link">
                                     <a href="">Book</a>
                                 </li>
-                                <li class="link">
+                                <li className="link">
                                     <a href="">Contact</a>
                                 </li>
-                                <li class="link">
+                                <li className="link">
                                     <a href="">About</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="content grow flex w-full flex-col justify-center items-end">
-                        <div class="text flex flex-col items-end gap-[15px]">
-                            <div class="social flex gap-3 ">
-                                <span class="icon">
+                    <div className="content grow flex w-full flex-col justify-center items-end">
+                        <div className="text flex flex-col items-end gap-[15px]">
+                            <div className="social flex gap-3 ">
+                                <span className="icon">
                                     <img src="/images/fb.svg" alt="" />
                                 </span>
-                                <span class="icon">
+                                <span className="icon">
                                     <img src="/images/insta.svg" alt="" />
                                 </span>
                             </div>
@@ -49,7 +49,7 @@ const HomeContent = () => {
                                 Book Now
                             </button>
                         </div>
-                        <div class="view-more pt-[6.938rem] ">
+                        <div className="view-more pt-[6.938rem] ">
                             <a href="" className="text-lg ">
                                 View More
                             </a>
@@ -60,13 +60,13 @@ const HomeContent = () => {
                 </div>
             </div>
             {/* <!-- beauty --> */}
-            <div className="beauty  h-[20.5rem] lg:h-[77.5rem]">
-                <div class="container">
-                    <div class="content-col">
-                        <div className="side-border mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem]">
-                            <div class="top-bar"></div>
+            <div className="beauty  h-[20.5rem] lg:h-[77.5rem] p-[1rem] lg:p-[2.563rem]">
+                <div className="container ">
+                    <div className="content-col w-full lg:w-[500px]">
+                        <div className="side-border border-l-[3px] border-l-[#CC0909] mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem] sidebar-left-aligned">
+                            <div className="top-bar w-[80px] md:w-[198px]"></div>
                             <h2 className="text-2xl lg:text-7xl">BEAUTY</h2>
-                            <p className="text-1xl lg:text-2xl  w-[50%] lg:w-[100%]">
+                            <p className="text-1xl lg:text-2xl  w-[70%] lg:w-[100%]">
                                 m officiis quam neque. Fuga reprehenderit
                                 reiciendis repellendus? m officiis quam neque.
                                 Fuga reprehenderit reiciendis repellendus?
@@ -76,13 +76,13 @@ const HomeContent = () => {
                 </div>
             </div>
             {/* <!-- potrait --> */}
-            <div class="potrait h-[20.5rem] lg:h-[77.5rem]">
-                <div class="container">
-                    <div class="content-col">
-                        <div class="side-border mt-[2.25rem] lg:mt-[16.25rem]  pl-[1.063rem] lg:pl-[2.063rem]">
-                            <div class="top-bar"></div>
+            <div className="potrait h-[20.5rem] lg:h-[77.5rem] p-[1rem] lg:p-[2.563rem]">
+                <div className="container flex items-end">
+                    <div className="content-col w-full lg:w-[500px]">
+                        <div className="side-border mt-[2.25rem] lg:mt-[16.25rem]  pl-[1.063rem] lg:pl-[2.063rem] sidebar-right-aligned">
+                            <div className="top-bar w-[80px] md:w-[198px]"></div>
                             <h2 className="text-2xl lg:text-7xl">PORTRAIT</h2>
-                            <p className="  text-1xl lg:text-2xl w-[50%] lg:w-[100%]">
+                            <p className=" right-text text-1xl lg:text-2xl w-[70%] lg:w-[100%]">
                                 m officiis quam neque. Fuga reprehenderit
                                 reiciendis repellendus? m officiis quam neque.
                                 Fuga reprehenderit reiciendis repellendus?
@@ -92,13 +92,13 @@ const HomeContent = () => {
                 </div>
             </div>
             {/* <!-- fashion --> */}
-            <div class="fashion h-[20.5rem] lg:h-[77.5rem]">
-                <div class="container">
-                    <div class="content-col">
-                        <div class="side-border  mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem]">
-                            <div class="top-bar"></div>
+            <div className="fashion h-[20.5rem] lg:h-[77.5rem] p-[1rem] lg:p-[2.563rem]">
+                <div className="container">
+                    <div className="content-col w-full lg:w-[500px]">
+                        <div className="side-border  mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem] sidebar-left-aligned">
+                            <div className="top-bar w-[80px] md:w-[198px]"></div>
                             <h2 className="text-2xl lg:text-7xl">FASHION</h2>
-                            <p className="  text-1xl lg:text-2xl w-[50%] lg:w-[100%]">
+                            <p className="  text-1xl lg:text-2xl w-[70%] lg:w-[100%]">
                                 m officiis quam neque. Fuga reprehenderit
                                 reiciendis repellendus? m officiis quam neque.
                                 Fuga reprehenderit reiciendis repellendus?
@@ -108,13 +108,13 @@ const HomeContent = () => {
                 </div>
             </div>
             {/* <!-- meeting --> */}
-            <div class="meeting h-[20.5rem] lg:h-[77.5rem]">
-                <div class="container">
-                    <div class="content-col">
-                        <div className="side-border mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem]">
-                            <div class="top-bar"></div>
+            <div className="meeting h-[20.5rem] lg:h-[77.5rem] p-[1rem] lg:p-[2.563rem]">
+                <div className="container  flex items-end">
+                    <div className="content-col w-full lg:w-[500px]">
+                        <div className="side-border  mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem] sidebar-right-aligned">
+                            <div className="top-bar w-[80px] md:w-[198px] "></div>
                             <h2 className="text-2xl lg:text-7xl">MEETING</h2>
-                            <p className="text-1xl lg:text-2xl w-[50%] lg:w-[100%]">
+                            <p className=" right-text text-1xl lg:text-2xl w-[80%] lg:w-[100%]">
                                 m officiis quam neque. Fuga reprehenderit
                                 reiciendis repellendus? m officiis quam neque.
                                 Fuga reprehenderit reiciendis repellendus?
@@ -124,13 +124,13 @@ const HomeContent = () => {
                 </div>
             </div>
             {/* {/* <!-- people --> */}
-            <div class="people h-[20.5rem] lg:h-[77.5rem]">
-                <div class="container">
-                    <div class="content-col">
-                        <div class="side-border  mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem]">
-                            <div class="top-bar"></div>
+            <div className="people h-[20.5rem] lg:h-[77.5rem] p-[1rem] lg:p-[2.563rem]">
+                <div className="container">
+                    <div className="content-col w-full lg:w-[500px]">
+                        <div className="side-border  mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem] sidebar-left-aligned">
+                            <div className="top-bar w-[80px] md:w-[198px]"></div>
                             <h2 className="text-2xl lg:text-7xl">PEOPLE</h2>
-                            <p className="  text-1xl lg:text-2xl w-[50%] lg:w-[100%]">
+                            <p className="  text-1xl lg:text-2xl w-[70%] lg:w-[100%]">
                                 m officiis quam neque. Fuga reprehenderit
                                 reiciendis repellendus? m officiis quam neque.
                                 Fuga reprehenderit reiciendis repellendus?
@@ -140,13 +140,13 @@ const HomeContent = () => {
                 </div>
             </div>
             {/* <!-- product --> */}
-            <div class="product h-[20.5rem] lg:h-[77.5rem]">
-                <div class="container">
-                    <div class="content-col">
-                        <div class="side-border mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem]">
-                            <div class="top-bar"></div>
+            <div className="product h-[20.5rem] lg:h-[77.5rem] p-[1rem] lg:p-[2.563rem]">
+                <div className="container  flex items-end">
+                    <div className="content-col w-full lg:w-[500px]">
+                        <div className="side-border mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem] sidebar-right-aligned">
+                            <div className="top-bar w-[80px] md:w-[198px]"></div>
                             <h2 className="text-2xl lg:text-7xl">PRODUCT</h2>
-                            <p className="  text-1xl lg:text-2xl w-[50%] lg:w-[100%]">
+                            <p className=" right-text text-1xl lg:text-2xl w-[70%] lg:w-[100%]">
                                 m officiis quam neque. Fuga reprehenderit
                                 reiciendis repellendus? m officiis quam neque.
                                 Fuga reprehenderit reiciendis repellendus?
@@ -156,13 +156,13 @@ const HomeContent = () => {
                 </div>
             </div>
             {/* <!-- couple --> */}
-            <div class="couple h-[20.5rem] lg:h-[77.5rem]">
-                <div class="container">
-                    <div class="content-col">
-                        <div class="side-border mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem]">
-                            <div class="top-bar"></div>
+            <div className="couple h-[20.5rem] lg:h-[77.5rem] p-[1rem] lg:p-[2.563rem]">
+                <div className="container">
+                    <div className="content-col w-full lg:w-[500px]">
+                        <div className="side-border mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem] sidebar-left-aligned">
+                            <div className="top-bar w-[80px] md:w-[198px]"></div>
                             <h2 className="text-2xl lg:text-7xl">COUPLE</h2>
-                            <p className="  text-1xl lg:text-2xl w-[50%] lg:w-[100%]">
+                            <p className="  text-1xl lg:text-2xl w-[70%] lg:w-[100%]">
                                 m officiis quam neque. Fuga reprehenderit
                                 reiciendis repellendus? m officiis quam neque.
                                 Fuga reprehenderit reiciendis repellendus?
@@ -172,13 +172,13 @@ const HomeContent = () => {
                 </div>
             </div>
             {/* <!-- nature --> */}
-            <div class="nature h-[20.5rem] lg:h-[77.5rem]">
-                <div class="container">
-                    <div class="content-col">
-                        <div class="side-border  mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem]">
-                            <div class="top-bar"></div>
+            <div className="nature h-[20.5rem] lg:h-[77.5rem] p-[1rem] lg:p-[2.563rem]">
+                <div className="container  flex items-end">
+                    <div className="content-col w-full lg:w-[500px]">
+                        <div className="side-border  mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem] sidebar-right-aligned">
+                            <div className="top-bar w-[80px] md:w-[198px]"></div>
                             <h2 className="text-2xl lg:text-7xl">NATURE</h2>
-                            <p className="  text-1xl lg:text-2xl w-[50%] lg:w-[100%]">
+                            <p className="right-text  text-1xl lg:text-2xl w-[80%] lg:w-[100%]">
                                 m officiis quam neque. Fuga reprehenderit
                                 reiciendis repellendus? m officiis quam neque.
                                 Fuga reprehenderit reiciendis repellendus?
@@ -188,13 +188,13 @@ const HomeContent = () => {
                 </div>
             </div>
             {/* <!-- birthdays --> */}
-            <div class="birthdays h-[20.5rem] lg:h-[77.5rem]">
-                <div class="container">
-                    <div class="content-col">
-                        <div class="side-border mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem]">
-                            <div class="top-bar"></div>
+            <div className="birthdays h-[20.5rem] lg:h-[77.5rem] p-[1rem] lg:p-[2.563rem]">
+                <div className="container">
+                    <div className="content-col w-full lg:w-[500px]">
+                        <div className="side-border mt-[2.25rem] lg:mt-[16.25rem] pl-[1.063rem] lg:pl-[2.063rem] sidebar-left-aligned">
+                            <div className="top-bar w-[80px] md:w-[198px]"></div>
                             <h2 className="text-2xl lg:text-7xl">BIRTHDAYS</h2>
-                            <p className="  text-1xl lg:text-2xl w-[50%] lg:w-[100%]">
+                            <p className=" text-1xl lg:text-2xl w-[70%] lg:w-[100%]">
                                 m officiis quam neque. Fuga reprehenderit
                                 reiciendis repellendus? m officiis quam neque.
                                 Fuga reprehenderit reiciendis repellendus?
@@ -203,29 +203,42 @@ const HomeContent = () => {
                     </div>
                 </div>
             </div>
-            <div class="footer">
-                <div class="content">
-                    <div class="back-to-top">
-                        <img src="/images/to-up.svg" alt="" />
-                        <a href="">Back to top</a>
+            <div className="footer min-h-[532px] w-full box-border bg-[black] pt-[4.188rem] pb-8 px-[2rem] lg:px-[4.313rem] py-0">
+                <div className="content  w-full flex flex-col items-center gap-8">
+                    <div className="back-to-top flex flex-col items-center justify-center">
+                        <img
+                            src="/images/to-up.svg"
+                            className="flex w-[200px] h-[50px] "
+                            alt=""
+                        />
+                        <a
+                            href=""
+                            className="text-white text-center text-2xl not-italic font-normal leading-[normal] no-underline"
+                        >
+                            Back to top
+                        </a>
                     </div>
-                    <div class="footer-content flex flex-col md:flex-row">
-                        <div class="first footer-col">
-                            <h2>25</h2>
-                            <p>Years experience of freelance photography</p>
+                    <div className="footer-content w-full flex flex-col md:flex-row">
+                        <div className="first footer-col items-center md:items-start lg:px-16">
+                            <h2 className="text-center lg:text-start">25</h2>
+                            <p className="text-lg text-center md:text-start lg:text-2xl">
+                                Years experience of freelance photography
+                            </p>
                         </div>
-                        <div class="second footer-col">
-                            <h2>49</h2>
-                            <p>Projects worked on and counting</p>
+                        <div className="second footer-col px-2 items-center flex md:items-start lg:px-16  text-white border-x-2 border-x-[#CC0909] border-solid">
+                            <h2 className="text-center lg:text-start">49</h2>
+                            <p className="text-lg text-center md:text-start lg:text-2xl">
+                                Projects worked on and counting
+                            </p>
                         </div>
-                        <div class="third footer-col">
-                            <h2>36</h2>
-                            <p>
+                        <div className="third footer-col flex  items-center lg:items-start lg:px-16">
+                            <h2 className="text-center lg:text-start">36</h2>
+                            <p className="text-lg text-center md:text-start md:text-2xl">
                                 Stable client currently trust us and are booked
                             </p>
                         </div>
                     </div>
-                    <button>Book Now</button>
+                    <button className="text-lg lg:text-3xl">Book Now</button>
                 </div>
             </div>
         </>
