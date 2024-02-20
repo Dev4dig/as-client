@@ -74,7 +74,7 @@ color: white;
 
 
 
-body .hero .containe .content .text .social .icon {
+ .icon {
    @apply w-10 h-10 bg-[white] flex items-center justify-center p-[3px] rounded-[50%];
 
 }
