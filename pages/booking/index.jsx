@@ -83,8 +83,8 @@ const Booking = () => {
     ];
     return (
         <div>
-            <MobileNav />
-            <Nav />
+            <MobileNav page={"booking"} />
+            <Nav page={"booking"}/>
             <div className="heading flex flex-col items-center mt-10">
                 <h2 className="text-center text-4xl font-semibold">
                     Welcome to the booking page!

@@ -3,6 +3,7 @@
 body {
   padding: 0px;
   margin: 0px;
+  font-family: "Open Sans";
 }
 
 body .hero .containe {
@@ -46,11 +47,18 @@ body .hero .containe {
 color: white;
 
 }
- .nav .menu .menu-list .active {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+ 
+.nav .menu .menu-list .active  {
+  @apply flex flex-row justify-start;
+}
+
+@screen lg {
+  .nav .menu .menu-list .active {
+    @apply flex flex-col justify-center items-center;
+  
+   
+  
+  }
 }
 .nav .menu .menu-list .active a {
   color: #CC0909;

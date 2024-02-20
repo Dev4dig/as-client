@@ -1,34 +1,15 @@
 import React from "react";
 import MobileNav from "../mobile-nav/mobile-nav";
+import Nav from "../nav/nav";
 // import "./home.scss";
 const HomeContent = () => {
     return (
         <>
             {/* <!-- hero --> */}
-            <MobileNav />
+            <MobileNav page={"home"} />
             <div className="hero bg-[url('/images/hero.webp')] w-full h-[650px] lg:h-[1250px] bg-cover lg:bg-cover bg-no-repeat bg-top lg:bg-left flex flex-col items-center box-border px-[1.563rem] py-0">
                 <div className="containe px-[1rem] md:px-[6rem]">
-                    <div className="nav hidden lg:flex ">
-                        <div className="logo">
-                            <img src="/images/logo2.png" alt="" />
-                        </div>
-                        <div className="menu">
-                            <ul className="menu-list hidden md:flex">
-                                <li className="link active">
-                                    <a href="/">Home</a>
-                                </li>
-                                <li className="link">
-                                    <a href="/booking">Book</a>
-                                </li>
-                                <li className="link">
-                                    <a href="">Contact</a>
-                                </li>
-                                <li className="link">
-                                    <a href="">About</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                <Nav page={"home"}/>
                     <div className="content grow flex w-full flex-col justify-center items-end">
                         <div className="text flex flex-col items-end gap-[15px]">
                             <div className="social flex gap-3 ">

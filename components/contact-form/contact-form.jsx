@@ -27,15 +27,15 @@ const ContactForm = () => {
     };
 
     return (
-        <div>
+        <div className="w-full">
             <form
                 onSubmit={handleSubmit}
-                className="w-[570px] flex flex-col gap-5 "
+                className=" flex flex-col gap-5  w-full "
             >
                 <div className="mb-4">
                     <label
                         htmlFor="name"
-                        className="block text-white text-2xl  font-normal mb-2"
+                        className="block text-white text-2xl font-normal mb-2"
                     >
                         Name
                     </label>
@@ -46,7 +46,7 @@ const ContactForm = () => {
                         placeholder="Enter your name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full p-2 border rounded-sm bg-transparent"
+                        className="w-full h-[4.875rem] p-2 border rounded-sm bg-transparent"
                         required
                     />
                 </div>
@@ -65,7 +65,7 @@ const ContactForm = () => {
                         placeholder="Enter your email addres"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full p-2 border rounded-sm  bg-transparent"
+                        className="w-full h-[4.875rem] p-2 border rounded-sm  bg-transparent"
                         required
                     />
                 </div>
