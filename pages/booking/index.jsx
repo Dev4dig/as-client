@@ -1,9 +1,10 @@
+import Tag from "@/components/Tag/tag";
 import MobileNav from "@/components/mobile-nav/mobile-nav";
 import Nav from "@/components/nav/nav";
-import React from "react";
+import React, { useState } from "react";
 
 const Booking = () => {
-    const tags = [
+    const availableTags = [
         {
             tag: "Engagement",
             selected: true,
@@ -81,10 +82,94 @@ const Booking = () => {
             selected: true,
         },
     ];
+
+    const [tags, setTags] = useState(availableTags);
+
+    const toggleTagSelection = index => {
+        console.log(index);
+        const updatedTags = [...tags];
+        console.log(updatedTags);
+
+        updatedTags[index].selected = !updatedTags[index].selected;
+        setTags(updatedTags);
+    };
+    const handleTagClick = index => {
+        toggleTagSelection(index);
+    };
+
+    const handleInputChange = e => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        // Form validation logic here
+        const validation = validateForm();
+        if (validation.isValid) {
+            // Send data to API
+            console.log("Form data:", { formData, tags });
+            // Reset form after successful submission if needed
+            // resetForm();
+        } else {
+            // Handle validation errors
+            console.log("Form validation failed");
+            console.log(validation);
+        }
+    };
+
+    const [formData, setFormData] = useState({
+        date: "",
+        time: "",
+        address: "",
+        name: "",
+        phone: "",
+        email: "",
+    });
+    const validateForm = () => {
+        // Check if at least one tag is selected
+        const isAtLeastOneTagSelected = tags.some(tag => tag.selected);
+
+        // Check if all form fields are filled
+        const isFormValid =
+            formData.date &&
+            formData.time &&
+            formData.address &&
+            formData.name &&
+            formData.phone &&
+            formData.email;
+
+        // Define error messages for each field
+        const errorMessages = {
+            tags: isAtLeastOneTagSelected
+                ? null
+                : "Please select at least one tag.",
+            date: formData.date ? null : "Please enter a date.",
+            time: formData.time ? null : "Please enter a time.",
+            address: formData.address ? null : "Please enter an address.",
+            name: formData.name ? null : "Please enter a name.",
+            phone: formData.phone ? null : "Please enter a phone number.",
+            email: formData.email ? null : "Please enter an email.",
+        };
+
+        // Check if any error message exists
+        const hasError = Object.values(errorMessages).some(
+            message => message !== null
+        );
+
+        return {
+            isValid: !hasError,
+            errors: errorMessages,
+        };
+    };
+
     return (
         <div>
             <MobileNav page={"booking"} />
-            <Nav page={"booking"}/>
+            <Nav page={"booking"} />
             <div className="heading flex flex-col items-center mt-10">
                 <h2 className="text-center text-4xl font-semibold">
                     Welcome to the booking page!
@@ -104,25 +189,24 @@ const Booking = () => {
                         (You can select multiple options)
                     </p>
                     <div className="tags-list flex flex-wrap justify-center px-[1rem] lg:px-[7rem] gap-5 mt-5">
-                        {tags.map((tag, index) => {
-                            let classes = tag.selected
-                                ? "bg-[#CCAF40] text-white"
-                                : "text-[#CCAF40]";
-                            return (
-                                <span
-                                    key={index}
-                                    className={`rounded-md tag border border-[#CCAF40] px-5 py-1 ${classes}`}
-                                >
-                                    {tag.tag}
-                                </span>
-                            );
-                        })}
+                        {tags.map((tag, index) => (
+                            <Tag
+                                key={index}
+                                tag={tag.tag}
+                                selected={tag.selected}
+                                onClick={() => handleTagClick(index)}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
 
             <div className=" mb-10 form mt-[5rem]  w-full px-[5rem] flex flex-col items-center">
-                <form action="" className="flex flex-col gap-[3rem]">
+                <form
+                    action=""
+                    onSubmit={handleSubmit}
+                    className="flex flex-col gap-[3rem]"
+                >
                     <div className="first-row flex flex-col items-center">
                         <h3 className="font-semibold text-2xl">
                             When and where is the photoshoot?
