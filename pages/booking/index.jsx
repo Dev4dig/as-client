@@ -4,6 +4,10 @@ import Nav from "@/components/nav/nav";
 import React, { useState } from "react";
 
 const Booking = () => {
+    // pages/index.js
+    const apiUrl = process.env.API_URL;
+    
+
     const availableTags = [
         {
             tag: "Engagement",

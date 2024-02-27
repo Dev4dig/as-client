@@ -38,7 +38,11 @@ const Contact = () => {
                             <ContactForm />
                             <div className="links flex flex-col text-white gap-5 mt-[5rem] w-full lg:w-[570px]">
                                 <div className="phone flex justify-end gap-3">
-                                    <p>+92-334-4567890</p>
+                                    <p>
+                                        <a href="tel:+923342876397">
+                                            +92-334-2876397
+                                        </a>
+                                    </p>
                                     <span>
                                         <img
                                             className="w-[20px] h-[20px]"
@@ -47,7 +51,11 @@ const Contact = () => {
                                     </span>
                                 </div>
                                 <div className="address flex justify-end gap-3">
-                                    <p>Lane 3, Gulshan-e-Hadeed, Lahore</p>
+                                    <p>
+                                        Shop# 8F Block 8 Busniess Bay Sector f
+                                        Dha phase 1 bahria town phase 7
+                                        islamabad,
+                                    </p>
                                     <span>
                                         <img
                                             className="w-[20px] h-[20px]"
@@ -56,7 +64,11 @@ const Contact = () => {
                                     </span>
                                 </div>
                                 <div className="mail flex justify-end gap-3">
-                                    <p>alistudiophotography@gmail.com</p>
+                                    <p>
+                                        <a href="mailto:alistudio777@gmail.com">
+                                            alistudio777@gmail.com
+                                        </a>
+                                    </p>
                                     <span>
                                         <img
                                             className="w-[20px] h-[20px]"
