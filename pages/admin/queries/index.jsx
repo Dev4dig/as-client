@@ -1,29 +1,35 @@
 import AdminLayout from "@/components/admin-layout/admin-layout";
 import QueryCard from "@/components/query-card/query-card";
-import React from "react";
-
-const sampleQueries = [
-    {
-        id: 1,
-        name: "John Doe",
-        email: "john@example.com",
-        message: "This is a sample message from John Doe.",
-    },
-    {
-        id: 2,
-        name: "Jane Smith",
-        email: "jane@example.com",
-        message: "Another sample message from Jane Smith.",
-    },
-];
+import React, { useEffect, useState } from "react";
 
 const Queries = () => {
+    const [contacts, setContacts] = useState([]);
+
+    useEffect(() => {
+        // Fetch data from your API endpoint
+        const fetchData = async () => {
+            try {
+                const response = await fetch("http://localhost:10003/contact");
+                if (response.ok) {
+                    const data = await response.json();
+                    setContacts(data);
+                } else {
+                    console.error("Failed to fetch contacts.");
+                }
+            } catch (error) {
+                console.error("Error fetching contacts:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     return (
         <AdminLayout>
             <div>
                 <h2 className="text-2xl font-semibold mb-4">Contacts</h2>
-                {sampleQueries.map(query => (
-                    <QueryCard key={query.id} query={query} />
+                {contacts.map(contact => (
+                    <QueryCard key={contact.id} query={contact} />
                 ))}
             </div>
         </AdminLayout>

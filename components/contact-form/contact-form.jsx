@@ -14,16 +14,33 @@ const ContactForm = () => {
         });
     };
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault();
-        // Add your form submission logic here
-        console.log("Form submitted:", formData);
-        // Reset form fields if needed
-        setFormData({
-            name: "",
-            email: "",
-            message: "",
-        });
+
+        try {
+            // Replace with your API endpoint
+            const response = await fetch("http://localhost:10003/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                console.log("Form submitted successfully!");
+                // Reset form fields if needed
+                setFormData({
+                    name: "",
+                    email: "",
+                    message: "",
+                });
+            } else {
+                console.error("Form submission failed.");
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+        }
     };
 
     return (
@@ -46,7 +63,7 @@ const ContactForm = () => {
                         placeholder="Enter your name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full h-[4.875rem] p-2 border rounded-sm bg-transparent"
+                        className="w-full h-[4.875rem] p-2 border rounded-sm bg-transparent text-white"
                         required
                     />
                 </div>
@@ -65,7 +82,7 @@ const ContactForm = () => {
                         placeholder="Enter your email addres"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full h-[4.875rem] p-2 border rounded-sm  bg-transparent"
+                        className="w-full h-[4.875rem] p-2 border rounded-sm  bg-transparent text-white"
                         required
                     />
                 </div>
@@ -84,7 +101,7 @@ const ContactForm = () => {
                         onChange={handleChange}
                         placeholder="Enter your message here"
                         rows="4"
-                        className="w-full p-2 border rounded-sm  bg-transparent"
+                        className="w-full p-2 border rounded-sm  bg-transparent text-white"
                         required
                     ></textarea>
                 </div>

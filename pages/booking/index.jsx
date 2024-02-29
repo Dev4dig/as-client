@@ -6,8 +6,15 @@ import React, { useState } from "react";
 const Booking = () => {
     // pages/index.js
     const apiUrl = process.env.API_URL;
-    
-
+    const [formData, setFormData] = useState({
+        date: "",
+        time: "",
+        address: "",
+        name: "",
+        phone: "",
+        email: "",
+        tags: [],
+    });
     const availableTags = [
         {
             tag: "Engagement",
@@ -90,7 +97,7 @@ const Booking = () => {
     const [tags, setTags] = useState(availableTags);
 
     const toggleTagSelection = index => {
-        console.log(index);
+        // console.log(index);
         const updatedTags = [...tags];
         console.log(updatedTags);
 
@@ -103,21 +110,67 @@ const Booking = () => {
 
     const handleInputChange = e => {
         const { name, value } = e.target;
+        // console.log(({ name, value } = e.target));
+        // console.log(name);
+        // console.log(value);
         setFormData({
             ...formData,
             [name]: value,
         });
     };
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault();
+
         // Form validation logic here
         const validation = validateForm();
-        if (validation.isValid) {
-            // Send data to API
-            console.log("Form data:", { formData, tags });
-            // Reset form after successful submission if needed
-            // resetForm();
+
+        if (true) {
+            try {
+                // Create an array of selected tags
+                const selectedTags = tags
+                    .filter(tag => tag.selected)
+                    .map(tag => tag.tag);
+
+                // Combine form data and selected tags
+                const bookingData = {
+                    ...formData,
+                    tags: selectedTags,
+                };
+                console.log(bookingData);
+                // return;
+                const response = await fetch(
+                    "http://localhost:10003/bookings",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+
+                        body: JSON.stringify(bookingData),
+
+                        // body: JSON.stringify({
+                        //     date: "2024-03-01",
+                        //     time: "10:00 AM",
+                        //     address: "123 Main Street",
+                        //     name: "John Doe",
+                        //     phone: "123-456-7890",
+                        //     email: "ad5.doe@example.com",
+                        //     tags: ["tag1", "tag2"],
+                        // }),
+                    }
+                );
+
+                if (response.ok) {
+                    console.log("Booking created successfully");
+                    // Reset form after successful submission if needed
+                    // resetForm();
+                } else {
+                    console.error("Error creating booking");
+                }
+            } catch (error) {
+                console.error("Error creating booking:", error);
+            }
         } else {
             // Handle validation errors
             console.log("Form validation failed");
@@ -125,14 +178,6 @@ const Booking = () => {
         }
     };
 
-    const [formData, setFormData] = useState({
-        date: "",
-        time: "",
-        address: "",
-        name: "",
-        phone: "",
-        email: "",
-    });
     const validateForm = () => {
         // Check if at least one tag is selected
         const isAtLeastOneTagSelected = tags.some(tag => tag.selected);
@@ -221,7 +266,9 @@ const Booking = () => {
                                     Date
                                 </span>
                                 <input
-                                    type="text"
+                                    onChange={handleInputChange}
+                                    name="date"
+                                    type="date"
                                     className="border-0 text-black h-full w-full"
                                 />
                             </div>
@@ -230,7 +277,9 @@ const Booking = () => {
                                     Time
                                 </span>
                                 <input
+                                    onChange={handleInputChange}
                                     type="text"
+                                    name="time"
                                     className="border-0 text-black h-full w-full"
                                 />
                             </div>
@@ -239,7 +288,9 @@ const Booking = () => {
                                     Address
                                 </span>
                                 <input
+                                    onChange={handleInputChange}
                                     type="text"
+                                    name="address"
                                     className="border-0 text-black h-full w-full"
                                 />
                             </div>
@@ -256,7 +307,9 @@ const Booking = () => {
                                     Name
                                 </span>
                                 <input
+                                    onChange={handleInputChange}
                                     type="text"
+                                    name="name"
                                     className="border-0 text-black h-full w-full"
                                 />
                             </div>
@@ -265,7 +318,9 @@ const Booking = () => {
                                     Phone
                                 </span>
                                 <input
+                                    onChange={handleInputChange}
                                     type="text"
+                                    name="phone"
                                     className="border-0 text-black h-full w-full"
                                 />
                             </div>
@@ -275,6 +330,8 @@ const Booking = () => {
                                 </span>
                                 <input
                                     type="text"
+                                    name="email"
+                                    onChange={handleInputChange}
                                     className="border-0 text-black h-full w-full"
                                 />
                             </div>
