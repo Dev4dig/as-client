@@ -3,6 +3,8 @@ import Link from "next/link";
 import { IoMdHome } from "react-icons/io";
 import { SlCalender } from "react-icons/sl";
 import { RiChatSmile3Line } from "react-icons/ri";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { IoClose } from "react-icons/io5";
 
 const Sidebar = () => {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -13,13 +15,17 @@ const Sidebar = () => {
 
     return (
         <div
-            className={`h-screen bg-black text-white ${
-                isSidebarOpen ? "w-64" : "w-16"
+            className={` bg-black text-white absolute md:relative md:h-screen ${
+                isSidebarOpen ? "w-64 h-[100vh]" : "w-16 h-[50px]"
             } transition-all ease-in-out m-2 shadow-lg rounded-lg`}
         >
             <div className="p-4">
                 <button className="text-white" onClick={toggleSidebar}>
-                    {isSidebarOpen ? "Close" : "Open"}
+                    {isSidebarOpen ? (
+                        <IoClose size="22px" />
+                    ) : (
+                        <RxHamburgerMenu size="22px" />
+                    )}
                 </button>
             </div>
             {isSidebarOpen ? (

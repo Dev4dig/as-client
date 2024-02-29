@@ -13,14 +13,14 @@ const BookingItem = ({ booking }) => {
     return (
         <div className="border p-4 mb-4 flex items-center justify-between bg-white rounded-lg shadow-md">
             <div className="flex-1 flex flex-col bg-white rounded-lg p-1">
-                <div className="text-1xl flex items-center font-semibold mb-4">
+                <div className="text-1xl flex flex-col md:flex-row items-left md:items:center font-semibold mb-4">
                     Booking by{"   "}
                     <span className="bg-green-200 text-green-800 rounded-full px-4 ">
                         {booking.name}
                     </span>{" "}
                     ,{" "}
                     {booking.tags && (
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-0 md:gap-2">
                             {booking.tags.map((tag, index) => (
                                 <span
                                     key={index}
