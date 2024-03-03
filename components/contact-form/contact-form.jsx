@@ -17,7 +17,7 @@ const ContactForm = () => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-
+        console.log("submitting form");
         try {
             // Replace with your API endpoint
             const response = await fetch(apiUrl + "/contact", {
