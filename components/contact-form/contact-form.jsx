@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const ContactForm = () => {
+    const apiUrl = process.env.NEXT_PUBLIC_API_HOST;
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -19,7 +20,7 @@ const ContactForm = () => {
 
         try {
             // Replace with your API endpoint
-            const response = await fetch("http://localhost:10003/contact", {
+            const response = await fetch(apiUrl + "/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

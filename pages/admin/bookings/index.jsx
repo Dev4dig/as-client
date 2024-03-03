@@ -2,6 +2,7 @@ import BookingItem from "@/components/BookingItem/BookingItem";
 import AdminLayout from "@/components/admin-layout/admin-layout";
 
 const Bookings = ({ bookings }) => {
+    const apiUrl = process.env.NEXT_PUBLIC_API_HOST;
     return (
         <AdminLayout>
             <div className="border-full">
@@ -17,7 +18,7 @@ const Bookings = ({ bookings }) => {
 
 export async function getServerSideProps() {
     // Fetch bookings from your server API
-    const response = await fetch("http://localhost:10003/bookings");
+    const response = await fetch(apiUrl + "/bookings");
     const bookings = await response.json();
 
     return {

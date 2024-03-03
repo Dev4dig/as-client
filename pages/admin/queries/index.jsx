@@ -7,9 +7,10 @@ const Queries = () => {
 
     useEffect(() => {
         // Fetch data from your API endpoint
+        const apiUrl = process.env.NEXT_PUBLIC_API_HOST;
         const fetchData = async () => {
             try {
-                const response = await fetch("http://localhost:10003/contact");
+                const response = await fetch(apiUrl + "/contact");
                 if (response.ok) {
                     const data = await response.json();
                     setContacts(data);

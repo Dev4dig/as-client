@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 const Booking = () => {
     // pages/index.js
-    const apiUrl = process.env.API_URL;
+    const apiUrl = process.env.NEXT_PUBLIC_API_HOST;
     const [formData, setFormData] = useState({
         date: "",
         time: "",
@@ -139,27 +139,24 @@ const Booking = () => {
                 };
                 console.log(bookingData);
                 // return;
-                const response = await fetch(
-                    "http://localhost:10003/bookings",
-                    {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
+                const response = await fetch(apiUrl + "/bookings", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
 
-                        body: JSON.stringify(bookingData),
+                    body: JSON.stringify(bookingData),
 
-                        // body: JSON.stringify({
-                        //     date: "2024-03-01",
-                        //     time: "10:00 AM",
-                        //     address: "123 Main Street",
-                        //     name: "John Doe",
-                        //     phone: "123-456-7890",
-                        //     email: "ad5.doe@example.com",
-                        //     tags: ["tag1", "tag2"],
-                        // }),
-                    }
-                );
+                    // body: JSON.stringify({
+                    //     date: "2024-03-01",
+                    //     time: "10:00 AM",
+                    //     address: "123 Main Street",
+                    //     name: "John Doe",
+                    //     phone: "123-456-7890",
+                    //     email: "ad5.doe@example.com",
+                    //     tags: ["tag1", "tag2"],
+                    // }),
+                });
 
                 if (response.ok) {
                     console.log("Booking created successfully");
