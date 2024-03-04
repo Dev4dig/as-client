@@ -11,7 +11,7 @@ const AdminLayout = ({ children }) => {
                     <div className="w-full flex justify-center">
                         <div className="topbar w-[40%] h-[60px] border m-2 shadow-lg rounded-full"></div>
                     </div>
-                    <div className="w-full">{children}</div>
+                    <div className="w-full px-2">{children}</div>
                 </div>
             </div>
         </div>
