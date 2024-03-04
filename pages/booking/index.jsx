@@ -95,6 +95,8 @@ const Booking = () => {
     ];
 
     const [tags, setTags] = useState(availableTags);
+    const [message, setMessage] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const toggleTagSelection = index => {
         // console.log(index);
@@ -121,11 +123,13 @@ const Booking = () => {
 
     const handleSubmit = async e => {
         e.preventDefault();
+        setLoading(true);
+        setMessage(null);
 
         // Form validation logic here
         const validation = validateForm();
 
-        if (true) {
+        if (validation.isValid) {
             try {
                 // Create an array of selected tags
                 const selectedTags = tags
@@ -161,16 +165,36 @@ const Booking = () => {
                 if (response.ok) {
                     console.log("Booking created successfully");
                     // Reset form after successful submission if needed
+                    setMessage({
+                        type: "success",
+                        text: "Booking created successfully!",
+                    });
+                    setLoading(false);
                     // resetForm();
                 } else {
                     console.error("Error creating booking");
+                    setMessage({
+                        type: "error",
+                        text: "Error creating booking",
+                    });
+                    setLoading(false);
                 }
             } catch (error) {
                 console.error("Error creating booking:", error);
+                setMessage({
+                    type: "error",
+                    text: "Error creating booking",
+                });
+                setLoading(false);
             }
         } else {
             // Handle validation errors
             console.log("Form validation failed");
+            setMessage({
+                type: "error",
+                text: "All Fields are not filed, make sure you selected atleast one tag.",
+            });
+            setLoading(false);
             console.log(validation);
         }
     };
@@ -217,10 +241,10 @@ const Booking = () => {
             <MobileNav page={"booking"} />
             <Nav page={"booking"} />
             <div className="heading flex flex-col items-center mt-10">
-                <h2 className="text-center text-4xl font-semibold">
+                <h2 className="text-center text-4xl font-semibold px-2">
                     Welcome to the booking page!
                 </h2>
-                <p className="text-center font-normal text-2xl">
+                <p className="text-center font-normal text-2xl px-1">
                     Kindly provide necessary informations by attending to the
                     questions below.
                 </p>
@@ -238,6 +262,9 @@ const Booking = () => {
                         {tags.map((tag, index) => (
                             <Tag
                                 key={index}
+                                text-center
+                                font-normal
+                                text-2xl
                                 tag={tag.tag}
                                 selected={tag.selected}
                                 onClick={() => handleTagClick(index)}
@@ -254,9 +281,18 @@ const Booking = () => {
                     className="flex flex-col gap-[3rem]"
                 >
                     <div className="first-row flex flex-col items-center">
-                        <h3 className="font-semibold text-2xl">
+                        <h3 className="font-semibold px-1 text-2xl">
                             When and where is the photoshoot?
                         </h3>
+                        {message && (
+                            <div
+                                className={`mt-3 text-${
+                                    message.type === "success" ? "green" : "red"
+                                }-500`}
+                            >
+                                {message.text}
+                            </div>
+                        )}
                         <div className="fields flex flex-col lg:flex-row mt-10 gap-5">
                             <div className="field relative w-[328px] h-[56px] border border-[#CCAF40]">
                                 <span className="absolute top-[-13px] left-4 px-3 bg-white">
@@ -336,7 +372,7 @@ const Booking = () => {
                     </div>
 
                     <button className="self-center px-8 py-3 bg-[#CCAF40] rounded-full text-white font-semibold max-w-fit">
-                        Book Now
+                        {loading ? "Booking..." : "Book Now"}
                     </button>
                 </form>
             </div>

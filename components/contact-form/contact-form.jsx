@@ -7,6 +7,8 @@ const ContactForm = () => {
         email: "",
         message: "",
     });
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState(null);
 
     const handleChange = e => {
         setFormData({
@@ -15,11 +17,22 @@ const ContactForm = () => {
         });
     };
 
+    const delay = async milliseconds => {
+        return new Promise(resolve => {
+            setTimeout(resolve, milliseconds);
+        });
+    };
+
     const handleSubmit = async e => {
         e.preventDefault();
-        console.log("submitting form");
+        setLoading(true);
+        setMessage({
+            type: "success",
+            text: "Submitting...!",
+        });
+
+        await delay(2000);
         try {
-            // Replace with your API endpoint
             const response = await fetch(apiUrl + "/contact", {
                 method: "POST",
                 headers: {
@@ -29,7 +42,10 @@ const ContactForm = () => {
             });
 
             if (response.ok) {
-                console.log("Form submitted successfully!");
+                setMessage({
+                    type: "success",
+                    text: "Form submitted successfully!",
+                });
                 // Reset form fields if needed
                 setFormData({
                     name: "",
@@ -37,10 +53,18 @@ const ContactForm = () => {
                     message: "",
                 });
             } else {
-                console.error("Form submission failed.");
+                setMessage({
+                    type: "error",
+                    text: "Form submission failed.",
+                });
             }
         } catch (error) {
-            console.error("Error submitting form:", error);
+            setMessage({
+                type: "error",
+                text: "Error submitting form.",
+            });
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -48,7 +72,7 @@ const ContactForm = () => {
         <div className="w-full">
             <form
                 onSubmit={handleSubmit}
-                className=" flex flex-col gap-5  w-full "
+                className="flex flex-col gap-5 w-full"
             >
                 <div className="mb-4">
                     <label
@@ -114,10 +138,21 @@ const ContactForm = () => {
                     <button
                         type="submit"
                         className="bg-[#ccaf40] text-white py-2 px-4 rounded-md hover:bg-[#bda33b] transition"
+                        disabled={loading}
                     >
-                        Submit
+                        {loading ? "Submitting..." : "Submit"}
                     </button>
                 </div>
+
+                {message && (
+                    <div
+                        className={`mt-3 text-${
+                            message.type === "success" ? "green" : "red"
+                        }-500`}
+                    >
+                        {message.text}
+                    </div>
+                )}
             </form>
         </div>
     );
